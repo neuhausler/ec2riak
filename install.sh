@@ -41,7 +41,7 @@ ln -s /usr/local/var/log/riak /usr/local/lib/riak/log
 adduser --system --home /usr/local/var/lib/riak -M --shell /bin/bash --comment "Riak" riak
 
 # change file ownership
-chown -R riak:riak /usr/local/etc/riak /usr/local/var/lib/riak /usr/local/var/log/riak 
+chown -R riak:riak /usr/local/etc/riak /usr/local/var/lib/riak /usr/local/var/log/riak /usr/local/lib/riak
 
 # put changed init.d script in place
 cp $INSTALL_DIR/riak /usr/local/lib/riak/bin
