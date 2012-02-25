@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# This script installs and configures cloudrover on a fresh Amazon Linux AMI instance.
+# This script installs and configures riak on a fresh Amazon Linux AMI instance.
 # Requires Erlang to be installed
 #
 # Must be run with root privileges
@@ -9,6 +9,7 @@
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
+export INSTALL_DIR="$PWD"
 
 # get code and build it
 yum -y install gcc gcc-c++ glibc-devel make
@@ -36,17 +37,14 @@ rm -rf /usr/local/var/log/riak
 mv /usr/local/lib/riak/log /usr/local/var/log/riak
 ln -s /usr/local/var/log/riak /usr/local/lib/riak/log
 
-# add couchdb user
+# add riak user
 adduser --system --home /usr/local/var/lib/riak -M --shell /bin/bash --comment "Riak" riak
 
 # change file ownership
 chown -R riak:riak /usr/local/etc/riak /usr/local/var/lib/riak /usr/local/var/log/riak 
 
-# add couchdb to init.d
-ln -s /usr/local/etc/rc.d/couchdb /etc/init.d/couchdb
-
 # put changed init.d script in place
-cp /usr/local/lib/riak/bin/riak /usr/local/etc/rc.d/riak
+cp $INSTALL_DIR/riak /usr/local/etc/rc.d/riak
 chmod 0755 /usr/local/etc/rc.d/riak
 ln -s /usr/local/etc/rc.d/riak /etc/init.d/riak
 
