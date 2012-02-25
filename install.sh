@@ -11,7 +11,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
 
 # get code and build it
-yum install gcc gcc-c++ glibc-devel make
+yum -y install gcc gcc-c++ glibc-devel make
 wget http://downloads.basho.com/riak/riak-1.1.0/riak-1.1.0.tar.gz
 tar zxvf riak-1.1.0.tar.gz
 cd riak-1.1.0
@@ -45,9 +45,7 @@ chown -R riak:riak /usr/local/etc/riak /usr/local/var/lib/riak /usr/local/var/lo
 # add couchdb to init.d
 ln -s /usr/local/etc/rc.d/couchdb /etc/init.d/couchdb
 
-
-
-# put init.d script in place
+# put changed init.d script in place
 cp /usr/local/lib/riak/bin/riak /usr/local/etc/rc.d/riak
 chmod 0755 /usr/local/etc/rc.d/riak
 ln -s /usr/local/etc/rc.d/riak /etc/init.d/riak
