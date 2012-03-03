@@ -9,7 +9,7 @@ RUNNER_SCRIPT_DIR=/usr/local/lib/riak/bin
 RUNNER_SCRIPT=${0##*/}
 
 RUNNER_ETC_DIR=/usr/local/etc/riak
-RUNNER_LOG_DIR=/usr/local/log/riak
+RUNNER_LOG_DIR=/usr/local/var/log/riak
 
 RUNNER_BASE_DIR=${RUNNER_SCRIPT_DIR%/*}
 RUNNER_LIB_DIR=./lib
