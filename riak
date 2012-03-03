@@ -8,17 +8,18 @@
 RUNNER_SCRIPT_DIR=/usr/local/lib/riak/bin
 RUNNER_SCRIPT=${0##*/}
 
+RUNNER_ETC_DIR=/usr/local/etc/riak
+RUNNER_LOG_DIR=/usr/local/log/riak
+
 RUNNER_BASE_DIR=${RUNNER_SCRIPT_DIR%/*}
-RUNNER_ETC_DIR=$RUNNER_BASE_DIR/etc
 RUNNER_LIB_DIR=./lib
-RUNNER_LOG_DIR=$RUNNER_BASE_DIR/log
 # Note the trailing slash on $PIPE_DIR/
 PIPE_DIR=/tmp/$RUNNER_BASE_DIR/
 # RUNNER_USER=
 RUNNER_USER=riak
 PLATFORM_DATA_DIR=./data
 SSL_DIST_CONFIG=$PLATFORM_DATA_DIR/ssl_distribution.args_file
-RIAK_VERSION="riak (1.1.0 2012-02-19) OSX x86_64"
+RIAK_VERSION="riak (1.1.0 2012-02-19)"
 
 # Make sure this script is running as the appropriate user
 if [ "$RUNNER_USER" -a "x$LOGNAME" != "x$RUNNER_USER" ]; then
