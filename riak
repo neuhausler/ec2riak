@@ -12,12 +12,12 @@ RUNNER_ETC_DIR=/usr/local/etc/riak
 RUNNER_LOG_DIR=/usr/local/var/log/riak
 
 RUNNER_BASE_DIR=${RUNNER_SCRIPT_DIR%/*}
-RUNNER_LIB_DIR=./lib
+RUNNER_LIB_DIR=/usr/local/lib/riak/lib
 # Note the trailing slash on $PIPE_DIR/
 PIPE_DIR=/tmp/$RUNNER_BASE_DIR/
 # RUNNER_USER=
 RUNNER_USER=riak
-PLATFORM_DATA_DIR=./data
+PLATFORM_DATA_DIR=/usr/local/lib/riak/data
 SSL_DIST_CONFIG=$PLATFORM_DATA_DIR/ssl_distribution.args_file
 RIAK_VERSION="riak (1.1.0 2012-02-19)"
 
