@@ -2,7 +2,6 @@
 
 #
 # This script installs and configures riak on a fresh Amazon Linux AMI instance.
-# Requires Erlang to be installed
 #
 # Must be run with root privileges
 #
