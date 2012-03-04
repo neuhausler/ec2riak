@@ -29,7 +29,7 @@ if [ "$RUNNER_USER" -a "x$LOGNAME" != "x$RUNNER_USER" ]; then
         exit 1
     fi
     echo "Attempting to restart script through sudo -u $RUNNER_USER"
-    exec sudo -u $RUNNER_USER -i $RUNNER_SCRIPT_DIR/$RUNNER_SCRIPT $@
+    su -l -s /bin/sh -c "$RUNNER_SCRIPT_DIR/$RUNNER_SCRIPT -detached" $RUNNER_USER $@
 fi
 
 # Warn the user if ulimit -n is less than 1024
