@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# chkconfig: - 80 05
+# description: Run Riak
+#
+
+RUNNER_DIR=/usr/local/lib/riak
+RUNNER_SCRIPT=/usr/local/lib/riak/bin/riak
+RUNNER_USER=riak
+
+cd $RUNNER_DIR
+
+RETVAL=0
+set +e
+su -l -s /bin/sh -c "$RUNNER_SCRIPT $1" $RUNNER_USER
+RETVAL=$?
+set -e
+
+echo $RETVAL
+
+exit 0
+
