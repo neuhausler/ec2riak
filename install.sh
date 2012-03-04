@@ -43,7 +43,7 @@ adduser --system --home /usr/local/var/lib/riak -M --shell /bin/bash --comment "
 chown -R riak:riak /usr/local/etc/riak /usr/local/var/lib/riak /usr/local/var/log/riak /usr/local/lib/riak
 
 # put changed init.d script in place
-cp $INSTALL_DIR/riak.initd /usr/local/etc/rc.d/
+cp $INSTALL_DIR/riak.initd /usr/local/etc/rc.d/riak
 chmod 0755 /usr/local/etc/rc.d/riak
 ln -s /usr/local/etc/rc.d/riak /etc/init.d/riak
 
