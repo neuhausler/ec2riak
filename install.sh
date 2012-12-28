@@ -12,27 +12,27 @@ export INSTALL_DIR="$PWD"
 
 # get code and build it
 yum -y install gcc gcc-c++ glibc-devel make
-wget http://downloads.basho.com/riak/riak-1.1.0/riak-1.1.0.tar.gz
-tar zxvf riak-1.1.0.tar.gz
-cd riak-1.1.0
+wget http://downloads.basho.com/riak/1.2/1.2.1/riak-1.2.1.tar.gz
+tar zxvf riak-1.2.1.tar.gz
+cd riak-1.2.1
 make rel
 
 # copy to /usr/local/lib
-rm -rf /usr/local/lib/riak
+mkdir -p /usr/local/lib
 cp -R rel/riak /usr/local/lib/
 
 # move etc
-rm -rf /usr/local/etc/riak
+mkdir -p /usr/local/etc
 mv /usr/local/lib/riak/etc /usr/local/etc/riak
 ln -s /usr/local/etc/riak /usr/local/lib/riak/etc
 
 # move data
-rm -rf /usr/local/var/lib/riak
+mkdir -p /usr/local/var/lib
 mv /usr/local/lib/riak/data /usr/local/var/lib/riak
 ln -s /usr/local/var/lib/riak /usr/local/lib/riak/data
 
 # move log
-rm -rf /usr/local/var/log/riak
+mkdir -p /usr/local/var/log
 mv /usr/local/lib/riak/log /usr/local/var/log/riak
 ln -s /usr/local/var/log/riak /usr/local/lib/riak/log
 
