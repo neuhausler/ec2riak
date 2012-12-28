@@ -12,7 +12,7 @@ export INSTALL_DIR="$PWD"
 
 # get code and build it
 yum -y install gcc gcc-c++ glibc-devel make
-wget http://downloads.basho.com/riak/1.2/1.2.1/riak-1.2.1.tar.gz
+wget http://downloads.basho.com.s3-website-us-east-1.amazonaws.com/riak/1.2/1.2.1/riak-1.2.1.tar.gz
 tar zxvf riak-1.2.1.tar.gz
 cd riak-1.2.1
 make rel
